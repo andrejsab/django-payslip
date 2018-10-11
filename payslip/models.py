@@ -57,12 +57,14 @@ class Employee(models.Model):
         settings.AUTH_USER_MODEL,
         verbose_name=_('User'),
         related_name='employees',
+        on_delete=models.CASCADE,
     )
 
     company = models.ForeignKey(
         'payslip.Company',
         verbose_name=_('Company'),
         related_name='employees',
+        on_delete=models.CASCADE,
     )
 
     hr_number = models.PositiveIntegerField(
@@ -164,6 +166,7 @@ class ExtraField(models.Model):
         related_name='extra_fields',
         help_text=_('Only field types with fixed values can be chosen to add'
                     ' global values.'),
+        on_delete=models.CASCADE,
     )
 
     value = models.CharField(
@@ -237,12 +240,14 @@ class Payment(models.Model):
         'payslip.PaymentType',
         verbose_name=_('Payment type'),
         related_name='payments',
+        on_delete=models.CASCADE,
     )
 
     employee = models.ForeignKey(
         'payslip.Employee',
         verbose_name=_('Employee'),
         related_name='payments',
+        on_delete=models.CASCADE,
     )
 
     amount = models.DecimalField(
