@@ -20,7 +20,7 @@ If you want to install the latest stable release from PyPi::
 
 If you feel adventurous and want to install the latest commit from GitHub::
 
-    $ pip install -e git://github.com/bitmazk/django-payslip.git#egg=payslip
+    $ pip install -e git://github.com/andrejsab/django-payslip.git#egg=payslip
 
 Add ``payslip`` to your ``INSTALLED_APPS``::
 
